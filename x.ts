@@ -9,11 +9,14 @@ class GetH5Info {
     this.filename = "V20_ESSIntegration_2018-12-10_1009.nxs";
   }
   getInfo() {
-    var file = new hdf5.File(this.filename, Access.ACC_RDONLY);
-    var group = file.openGroup("/entry/ESS_users/");
-    var members = group.getMemberNames();
+    const file = new hdf5.File(this.filename, Access.ACC_RDONLY);
+    let group = file.openGroup("/entry/");
+    let members = group.getMemberNames();
     console.log(members);
-    var array = h5lt.readDataset(group.id, "name");
+    group = file.openGroup("/entry/ESS_users/");
+    members = group.getMemberNames();
+    console.log(members);
+    const array = h5lt.readDataset(group.id, "name");
     console.log(array);
   }
 }
