@@ -1,7 +1,7 @@
-var hdf5 = require("hdf5").hdf5;
-var h5lt = require("hdf5").h5lt;
+const hdf5 = require("hdf5").hdf5;
+const h5lt = require("hdf5").h5lt;
 
-var Access = require("hdf5/lib/globals").Access;
+const Access = require("hdf5/lib/globals").Access;
 
 class GetH5Info {
   filename: string;
