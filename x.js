@@ -13,15 +13,13 @@ try
     group.close();
     file.close();
     file = new hdf5.File('./v20.h5', Access.ACC_RDWR);
+	console.log
     group=file.openGroup('entry/sample');
     var array=h5lt.readDataset(group.id, 'description');
     console.dir(array.length);
-    if(array.constructor.name==='Array'){
-        for(var mIndex=0;mIndex<array.length;mIndex++){
-            console.dir(array[mIndex]);
-        }
-    }
-    console.log(h5lt.readDataset(group.id, 'scalar'));
+	var iterator1 = array.entries();
+
+    // console.log(h5lt.readDataset(group.id, 'scalar'));
     group.close();
     file.close();
 }
