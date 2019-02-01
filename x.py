@@ -10,28 +10,30 @@ class GetH5Info:
         filename= "v20.h5"
         #filename = "V20_ESSIntegration_2018-12-10_1009.nxs"
         f = h5py.File(filename,'r',  libver='latest', swmr=True)
-        print(h5py.version.hdf5_version_tuple)
-        print(list(f.keys()))
-        print(list(f.items()))
-        for item in f.attrs.keys():
-            print(item + ":", f.attrs[item])
-        if ("creator" in list(f.attrs.keys())):
-            creator = f.attrs["creator"]
-            self.nexusInfo["creator"] =creator
-            print("creator is",creator)
+        
+        self.nexusInfo["creator"]= self.get_attribute(f.attrs, "creator")
+        self.nexusInfo["file_name"]= self.get_attribute(f.attrs, "file_name")
+        self.nexusInfo["file_time"]= self.get_attribute(f.attrs, "file_time")
         if ("/entry/ESS_users" in f):
-            print(list(f["/entry/ESS_users"].items()))
+            my_list = list()
             names=f["/entry/ESS_users/name"]
             for name in names:
-                print(name)
+                my_list.append(name)
+            self.nexusInfo["names"]= my_list
         title = self.get_property(f,"/entry/title")
+        source_name= self.get_property(f,"/entry/instrument/source/name")
         sample_description = self.get_ellipsis(f, "/entry/sample/description")
-        print(title)
-        print(sample_description)
+        self.nexusInfo["sample_description"]= sample_description[()]
+        self.nexusInfo["source_name"]= source_name
         f.close()
         print (self.nexusInfo)
 
 
+    def get_attribute(self, attrs, attr):
+        value = ""
+        if (attr in attrs.keys()):
+            value = attrs[attr]
+        return value
 
     def get_property(self, f, path):
         title = ""
