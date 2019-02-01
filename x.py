@@ -53,7 +53,7 @@ class GetH5Info:
 
     def loop(self):
         filenames=["v20.h5"]
-        filename = [
+        filenames = [
 "/users/detector/experiments/v20/2018_12_13/v20-2018-12-18T09:18:46+0100/v20-2018-12-18T09:18:46+0100.nxs",
 "/users/detector/experiments/v20/2018_12_13/v20-2018-12-14T16:12:01+0100/v20-2018-12-14T16:12:01+0100.nxs",
 "/users/detector/experiments/v20/2018_12_13/V20_ESSIntegration_2018-12-11_1743/V20_ESSIntegration_2018-12-11_1743.nxs",
