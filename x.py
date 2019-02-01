@@ -7,6 +7,7 @@ import copy
 class GetH5Info:
     nexusInfo = {}
     filename = "v20.h5"
+    metadata  = {}
 
     def __init__(self):
         self.filename = "v20.h5"
@@ -30,14 +31,15 @@ class GetH5Info:
         self.nexusInfo["sample_description"] = sample_description[()]
         self.nexusInfo["source_name"] = source_name
         f.close()
-        print(self.nexusInfo)
+        # print(self.nexusInfo)
+        self.metadata[filename]= self.nexusInfo
 
     def get_names(self, my_list, f, tag):
         if tag in f:
             names = f[tag+"/name"]
-            print(names)
+            # print(names)
             for name in names:
-                print(name)
+                # print(name)
                 my_list.append(name)
 
 
@@ -53,7 +55,7 @@ class GetH5Info:
         if (path in f):
             title = f[path][...]
             title2= title[()]
-        print(path, title2)
+        # print(path, title2)
         return title2
 
     def get_ellipsis(self, f, path):
@@ -105,3 +107,5 @@ class GetH5Info:
 if __name__ == "__main__":
     h5=GetH5Info()
     h5.loop()
+
+    print (h5.metadata )
