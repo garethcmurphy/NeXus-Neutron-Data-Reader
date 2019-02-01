@@ -39,10 +39,7 @@ class GetH5Info:
     def get_names(self, my_list, f, tag):
         if tag in f:
             names = f[tag+"/name"]
-            # print(names)
-            for name in names:
-                # print(name)
-                my_list.append(name)
+            my_list.extend(names)
 
     def get_attribute(self, attrs, attr):
         value = ""
