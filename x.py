@@ -25,6 +25,7 @@ class GetH5Info:
                 my_list.append(name)
             self.nexusInfo["names"] = my_list
         title = self.get_property(f, "/entry/title")
+        self.nexusInfo["title"] = title
         source_name = self.get_property(f, "/entry/instrument/source/name")
         sample_description = self.get_ellipsis(f, "/entry/sample/description")
         self.nexusInfo["sample_description"] = sample_description[()]
