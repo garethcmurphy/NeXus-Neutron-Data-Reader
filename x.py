@@ -77,8 +77,9 @@ class GetH5Info:
         tag = filename.replace("/users/detector/experiments/", "")
         sep = "/"
         tag2 = sep.join(tag.split(sep)[:-1])
-        tag3 = self.inv_map[tag2]
-        self.metadata[tag3] = self.nexusInfo
+        tag3 = "v20/2018_12_13/"+self.nexusInfo["file_name"]
+        tag4 = self.inv_map[tag3]
+        self.metadata[tag4] = self.nexusInfo
 
     def get_names(self, my_list, f, tag):
         if tag in f:
@@ -143,7 +144,7 @@ class GetH5Info:
         ]
         if hostname == 'CI0020036':
             filenames = [
-                "/Users/garethmurphy/Downloads/data/V20_ESSIntegration_2018-12-10_1009.nxs"]
+                "/Users/garethmurphy/Downloads/nexusnode/V20_ESSIntegration_2018-12-10_1009.nxs"]
         for filename in filenames:
             self.get_h5_info(filename)
 
