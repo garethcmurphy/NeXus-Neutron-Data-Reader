@@ -16,6 +16,7 @@ class GetH5Info:
 
     def get_h5_info(self, filename):
 
+        self.nexusInfo = {}
         f = h5py.File(filename, 'r',  libver='latest', swmr=True)
 
         self.nexusInfo["creator"] = self.get_attribute(f.attrs, "creator")
