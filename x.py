@@ -34,8 +34,10 @@ class GetH5Info:
 
     def get_names(self, my_list, f, tag):
         if tag in f:
-            names = f[tag]
+            names = f[tag+"/name"]
+            print(names)
             for name in names:
+                print(name)
                 my_list.append(name)
 
 
@@ -60,7 +62,6 @@ class GetH5Info:
         return dset[...]
 
     def loop(self):
-        filenames=["v20.h5"]
         filenames = [
 "/users/detector/experiments/v20/2018_12_13/v20-2018-12-18T09:18:46+0100/v20-2018-12-18T09:18:46+0100.nxs",
 "/users/detector/experiments/v20/2018_12_13/v20-2018-12-14T16:12:01+0100/v20-2018-12-14T16:12:01+0100.nxs",
@@ -96,6 +97,7 @@ class GetH5Info:
 "/users/detector/experiments/v20/2018_12_13/V20_ESSIntegration_2018-12-10_1805/V20_ESSIntegration_2018-12-10_1805.nxs",
 "/users/detector/experiments/v20/2018_12_13/v20-2018-12-14T16:12:26+0100/v20-2018-12-14T16:12:26+0100.nxs",
         ]
+        filenames=["v20.h5"]
         for filename in filenames:
             self.get_h5_info(filename)
 
