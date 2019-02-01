@@ -18,12 +18,11 @@ class GetH5Info:
         self.nexusInfo["creator"] = self.get_attribute(f.attrs, "creator")
         self.nexusInfo["file_name"] = self.get_attribute(f.attrs, "file_name")
         self.nexusInfo["file_time"] = self.get_attribute(f.attrs, "file_time")
-        if ("/entry/ESS_users" in f):
-            my_list = list()
-            names = f["/entry/ESS_users/name"]
-            for name in names:
-                my_list.append(name)
-            self.nexusInfo["names"] = my_list
+        my_list = list()
+        self.get_names(my_list, f, "/entry/ESS_users")
+        self.get_names(my_list, f, "/entry/HZB_users")
+        self.get_names(my_list, f, "/entry/STFC_users")
+        self.nexusInfo["names"] = my_list
         title = self.get_property(f, "/entry/title")
         self.nexusInfo["title"] = title
         source_name = self.get_property(f, "/entry/instrument/source/name")
@@ -32,6 +31,14 @@ class GetH5Info:
         self.nexusInfo["source_name"] = source_name
         f.close()
         print(self.nexusInfo)
+
+    def get_names(self, my_list, f, tag):
+        if tag in f:
+            names = f[tag]
+            for name in names:
+                my_list.append(name)
+
+
 
     def get_attribute(self, attrs, attr):
         value = ""
