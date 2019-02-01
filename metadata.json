@@ -1,1 +1,27 @@
-{"0017": {"creator": "kafka-to-nexus commit 8608a97", "file_name": "V20_ESSIntegration_2018-12-10_1009", "file_time": "2018-12-11T17:54:28.018+0100", "names": ["Tobias Richter", "Jonas Nilsson", "Nicklas Holmberg", "Irina Stefanescu", "Gregor Nowak", "Neil Vaytet", "Torben Nielsen", "Andrew Jackson", "Vendula Maulerova", "Peter Kadletz", "Robin Woracek", "Michael Hart", "Matthew Jones", "Owen Arnold", "Will Smith"], "title": "", "sample_description": "We're not sure what it is, but it glows with a mysterious green light...", "source_name": "V20_14hz_chopper_source"}}
+{
+  "0017": {
+    "creator": "kafka-to-nexus commit 8608a97",
+    "file_name": "V20_ESSIntegration_2018-12-10_1009",
+    "file_time": "2018-12-11T17:54:28.018+0100",
+    "names": [
+      "Tobias Richter",
+      "Jonas Nilsson",
+      "Nicklas Holmberg",
+      "Irina Stefanescu",
+      "Gregor Nowak",
+      "Neil Vaytet",
+      "Torben Nielsen",
+      "Andrew Jackson",
+      "Vendula Maulerova",
+      "Peter Kadletz",
+      "Robin Woracek",
+      "Michael Hart",
+      "Matthew Jones",
+      "Owen Arnold",
+      "Will Smith"
+    ],
+    "sample_description": "We're not sure what it is, but it glows with a mysterious green light...",
+    "source_name": "V20_14hz_chopper_source",
+    "title": ""
+  }
+}

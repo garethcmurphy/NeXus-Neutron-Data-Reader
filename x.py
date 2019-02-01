@@ -158,4 +158,4 @@ if __name__ == "__main__":
     filename = "metadata.json"
     # Writing JSON data
     with open(filename, 'w') as f:
-        json.dump(h5.metadata, f)
+        json.dump(h5.metadata, f, indent=2, sort_keys=True )
