@@ -98,7 +98,7 @@ class GetH5Info:
             "/users/detector/experiments/v20/2018_12_13/V20_ESSIntegration_2018-12-10_1805/V20_ESSIntegration_2018-12-10_1805.nxs",
             "/users/detector/experiments/v20/2018_12_13/v20-2018-12-14T16:12:26+0100/v20-2018-12-14T16:12:26+0100.nxs",
         ]
-        filenames = ["v20.h5"]
+        # filenames = ["v20.h5"]
         for filename in filenames:
             self.get_h5_info(filename)
 
