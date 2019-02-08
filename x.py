@@ -69,6 +69,7 @@ class GetH5Info:
         title = self.get_property(f, "/entry/title")
         self.nexusInfo["title"] = title
         source_name = self.get_property(f, "/entry/instrument/source/name")
+        self.nexusInfo["start_time"] = self.get_property(f, "/entry/start_time")
         sample_description = self.get_ellipsis(f, "/entry/sample/description")
         self.nexusInfo["sample_description"] = sample_description[()]
         self.nexusInfo["source_name"] = source_name
